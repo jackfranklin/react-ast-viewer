@@ -2,9 +2,6 @@ import React from 'react';
 import ASTNode from '../ast-node';
 
 export default React.createClass({
-  componentDidMount: function() {
-    console.log('func dec', this.props.node);
-  },
   render: function() {
     return (
       <div className='function-declaration'>

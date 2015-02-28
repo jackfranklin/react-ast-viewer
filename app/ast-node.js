@@ -6,6 +6,7 @@ import ExpressionStatement from './nodes/expression-statement';
 import CallExpression from './nodes/call-expression';
 import MemberExpression from './nodes/member-expression';
 import Literal from './nodes/literal';
+import Identifier from './nodes/identifier';
 
 const NODE_COMPONENTS = {
   FunctionDeclaration,
@@ -13,7 +14,8 @@ const NODE_COMPONENTS = {
   ExpressionStatement,
   CallExpression,
   MemberExpression,
-  Literal
+  Literal,
+  Identifier
 };
 
 export default React.createClass({
