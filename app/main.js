@@ -12,7 +12,7 @@ var MainComponent = React.createClass({
     }.bind(this));
   },
   getInitialState: function() {
-    return { code: "console.log('hello world')" };
+    return { code: "function hello() { console.log('hello world') }" };
   },
   render: function() {
     return (
