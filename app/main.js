@@ -16,7 +16,7 @@ var MainComponent = React.createClass({
   },
   render: function() {
     return (
-      <div>
+      <div className='app'>
         <div className='code'>
           <CodeInput code={this.state.code} />
           <pre><code>{ this.state.code }</code></pre>

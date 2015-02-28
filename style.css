@@ -1,6 +1,11 @@
 .wrap {
   width: 90%;
   margin: 5px auto;
+  overflow: auto;
+}
+
+.app {
+  overflow: auto
 }
 
 
@@ -20,4 +25,18 @@
   width: 100%;
   font-family: Courier, sans-serif;
   font-size: 14px;
+}
+
+.hidden { display: none; }
+
+.ast ul {
+  margin: 5px;
+  padding: 0;
+}
+
+.ast li {
+  list-style: none;
+  padding: 10px;
+  border: 1px solid black;
+  margin-bottom: 2px;
 }
