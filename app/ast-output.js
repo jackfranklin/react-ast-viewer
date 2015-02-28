@@ -19,8 +19,8 @@ export default React.createClass({
     return tree;
   },
   render: function() {
-    var nodes = this.state.tree.body.map((body) => {
-      return <li key={body}><ASTNode node={body} /></li>;
+    var nodes = this.state.tree.body.map((body, index) => {
+      return <li key={index}><ASTNode node={body} /></li>;
     });
 
     return <ul>{nodes}</ul>;
