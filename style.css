@@ -1,0 +1,23 @@
+.wrap {
+  width: 90%;
+  margin: 5px auto;
+}
+
+
+.code {
+  width: 45%;
+  float: left;
+}
+
+.ast {
+  width: 45%;
+  float: right;
+}
+
+.input-form textarea {
+  display: block;
+  height: 300px;
+  width: 100%;
+  font-family: Courier, sans-serif;
+  font-size: 14px;
+}

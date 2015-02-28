@@ -1,5 +1,6 @@
 import React from 'react';
 import CodeInput from './input';
+import ASTOutput from './ast-output';
 import emitter from './event';
 
 var MainComponent = React.createClass({
@@ -16,8 +17,13 @@ var MainComponent = React.createClass({
   render: function() {
     return (
       <div>
-        <CodeInput code={this.state.code} />
-        <div>{ this.state.code }</div>
+        <div className='code'>
+          <CodeInput code={this.state.code} />
+          <pre><code>{ this.state.code }</code></pre>
+        </div>
+        <div className='ast'>
+          <ASTOutput code={this.state.code} />
+        </div>
       </div>
     );
   }
