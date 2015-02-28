@@ -2,11 +2,13 @@
   width: 90%;
   margin: 5px auto;
   overflow: auto;
+  font-family: Helvetica, Arial, sans-serif;
 }
 
 .app {
   overflow: auto
 }
+
 
 
 .code {
@@ -25,6 +27,18 @@
   width: 100%;
   font-family: Courier, sans-serif;
   font-size: 14px;
+  padding: 5px;
+}
+
+.input-form input {
+  display: block;
+  background: #ddd;
+  width: 25%;
+  margin: 10px auto;
+  padding: 10px;
+  border: 1px solid black;
+  font-size: 15px;
+  text-align: center;
 }
 
 .hidden { display: none; }
@@ -34,9 +48,22 @@
   padding: 0;
 }
 
+.ast-node {
+  border: 1px solid black;
+  padding: 10px;
+  margin-top: 5px;
+}
 .ast li {
   list-style: none;
-  padding: 10px;
-  border: 1px solid black;
-  margin-bottom: 2px;
+  margin-bottom: 5px;
+}
+
+.ast-node h4 {
+  text-decoration: underline;
+  color: blue;
+}
+
+.ast-node h4:hover {
+  text-decoration: none;
+  cursor: pointer
 }
