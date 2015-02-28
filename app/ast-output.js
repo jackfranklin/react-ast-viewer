@@ -15,7 +15,6 @@ export default React.createClass({
   },
   parseCode: function(code) {
     var tree = esprima.parse(code);
-    console.log(tree);
     return tree;
   },
   render: function() {
