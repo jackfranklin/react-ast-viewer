@@ -1,0 +1,26 @@
+{
+  "name": "ast-viewer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "jspm": {
+    "directories": {
+      "lib": ".",
+      "packages": "jspm_packages"
+    },
+    "dependencies": {
+      "esprima": "npm:esprima@^2.0.0",
+      "event-emitter": "npm:event-emitter@^0.3.3",
+      "react": "npm:react@^0.12.2"
+    }
+  },
+  "devDependencies": {
+    "react-tools": "^0.12.2",
+    "serve": "^1.4.0"
+  }
+}
