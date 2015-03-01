@@ -18,9 +18,7 @@ var MainComponent = React.createClass({
   },
   onToggleAllClick: function(e) {
     e.preventDefault();
-    var newVisible = !this.stateVisible;
-    // the state change hasn't taken effect in this fn call
-    // so this.state isn't the new state at this point
+    var newVisible = !this.state.allVisible;
     emitter.emit('toggle-all', { visible: newVisible });
     this.setState({ allVisible: newVisible });
   },
