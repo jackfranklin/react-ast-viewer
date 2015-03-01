@@ -5,3 +5,7 @@ var myObj = {
     return 5;
   }
 };
+
+var x = myObj.init();
+
+console.log(x);
