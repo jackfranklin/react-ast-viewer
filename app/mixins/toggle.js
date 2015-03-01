@@ -1,4 +1,3 @@
-import React from 'react';
 import emitter from '../event';
 
 export default {
