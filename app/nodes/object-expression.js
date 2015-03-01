@@ -11,13 +11,17 @@ export default React.createClass({
   },
   render: function() {
     var properties = this.props.node.properties.map((property, index) => {
-      return <li key={index}><ASTNode parentPath={this.propertyPath(index)} node={property} /></li>;
+      return (
+        <li key={index}>
+          <ASTNode parentPath={this.arrayPath('properties', index)} node={property} />
+        </li>
+      )
     });
 
     return (
       <div className='object-expression ast-node'>
         <h4 onClick={this.onToggleClick}>ObjectExpression</h4>
-        <Path path={this.path()} />
+        <Path path={this.path()} visible={this.props.isFocused} />
         <ul className={this.state.visible ? 'visible' : 'hidden' }>
           <li><strong>properties</strong>: <ul>{ properties }</ul></li>
         </ul>

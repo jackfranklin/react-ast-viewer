@@ -11,6 +11,7 @@ System.config({
   "map": {
     "esprima": "npm:esprima@2.0.0",
     "event-emitter": "npm:event-emitter@0.3.3",
+    "lodash": "npm:lodash@3.3.1",
     "react": "npm:react@0.12.2",
     "text": "github:systemjs/plugin-text@0.0.2",
     "github:jspm/nodelibs-buffer@0.1.0": {
@@ -92,6 +93,9 @@ System.config({
       "esprima-fb": "npm:esprima-fb@7001.1.0-dev-harmony-fb",
       "process": "github:jspm/nodelibs-process@0.1.1",
       "source-map": "npm:source-map@0.1.31"
+    },
+    "npm:lodash@3.3.1": {
+      "process": "github:jspm/nodelibs-process@0.1.1"
     },
     "npm:path-browserify@0.0.0": {
       "process": "github:jspm/nodelibs-process@0.1.1"

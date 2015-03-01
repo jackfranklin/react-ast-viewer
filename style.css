@@ -41,7 +41,6 @@
   text-align: center;
 }
 
-.hidden { display: none; }
 
 .ast ul {
   margin: 5px;
@@ -68,3 +67,15 @@
   text-decoration: none;
   cursor: pointer
 }
+
+div.path code {
+  position: absolute;
+  z-index: 999;
+  background: white;
+  bottom: 20px;
+  right: 20px;
+  padding: 5px;
+}
+
+div.path code.hidden, .hidden { display: none; }
+
