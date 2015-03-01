@@ -18,10 +18,15 @@ var MainComponent = React.createClass({
   },
   onToggleAllClick: function(e) {
     e.preventDefault();
-    this.setState({ allVisible: !this.state.allVisible });
-    emitter.emit('toggle-all', { visible: this.state.allVisible });
+    var newVisible = !this.stateVisible;
+    // the state change hasn't taken effect in this fn call
+    // so this.state isn't the new state at this point
+    emitter.emit('toggle-all', { visible: newVisible });
+    this.setState({ allVisible: newVisible });
   },
   render: function() {
+    var toggleText = this.state.allVisible ? 'Close' : 'Expand'
+
     return (
       <div className='app'>
         <div className='intro'>
@@ -37,7 +42,7 @@ var MainComponent = React.createClass({
         </div>
 
         <div className='ast'>
-          <a href="#" onClick={this.onToggleAllClick}>Expand / Hide All</a>
+          <a href="#" onClick={this.onToggleAllClick}>{ toggleText }</a>
           <ASTOutput code={this.state.code} />
         </div>
       </div>
