@@ -12,14 +12,10 @@ export default React.createClass({
   },
   render: function() {
     return (
-      <div className='variable-declarator ast-node' onMouseLeave={this.onMouseLeave} onMouseEnter={this.onMouseEnter}>
-        <h4 onClick={this.onToggleClick}>VariableDeclarator</h4>
-        <Path path={this.path()} visible={this.state.isFocused} />
-        <ul className={this.state.visible ? 'visible' : 'hidden' }>
-          <li><strong>id</strong>: <ASTNode parentPath={this.path() + '.id'} node={this.props.node.id} /></li>
-          <li><strong>init</strong>: <ASTNode parentPath={this.path() + '.init'} node={this.props.node.init} /></li>
-        </ul>
-      </div>
+      <ul>
+        <li><strong>id</strong>: <ASTNode parentPath={this.path() + '.id'} node={this.props.node.id} /></li>
+        <li><strong>init</strong>: <ASTNode parentPath={this.path() + '.init'} node={this.props.node.init} /></li>
+      </ul>
     );
   }
 });

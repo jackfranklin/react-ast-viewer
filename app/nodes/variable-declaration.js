@@ -19,13 +19,9 @@ export default React.createClass({
       );
     });
     return (
-      <div onMouseLeave={this.onMouseLeave} onMouseEnter={this.onMouseEnter} className='variable-declaration ast-node'>
-        <h4 onClick={this.onToggleClick}>VariableDeclaration</h4>
-        <Path path={this.path()} visible={this.state.isFocused} />
-        <ul className={this.state.visible ? 'visible' : 'hidden' }>
-          <li><strong>Declarations</strong>: <ul>{ declarations }</ul></li>
-        </ul>
-      </div>
+      <ul>
+        <li><strong>Declarations</strong>: <ul>{ declarations }</ul></li>
+      </ul>
     );
   }
 });
