@@ -3,8 +3,10 @@ import CodeInput from './input';
 import ASTOutput from './ast-output';
 import emitter from './event';
 
+import code from './starting-code.js!text';
+
 var MainComponent = React.createClass({
-  componentDidMount: function() {
+  componentWillMount: function() {
     emitter.on('input-change', function(args) {
       this.setState({
         code: args.code
@@ -12,7 +14,11 @@ var MainComponent = React.createClass({
     }.bind(this));
   },
   getInitialState: function() {
-    return { code: "function hello() {\n console.log('hello world');\n}" };
+    return { code:  code };
+  },
+  onToggleAllClick: function(e) {
+    e.preventDefault();
+    emitter.emit('toggle-all');
   },
   render: function() {
     return (
@@ -30,6 +36,7 @@ var MainComponent = React.createClass({
         </div>
 
         <div className='ast'>
+          <a href="#" onClick={this.onToggleAllClick}>Expand / Hide All</a>
           <ASTOutput code={this.state.code} />
         </div>
       </div>

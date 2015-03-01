@@ -5,15 +5,14 @@ import ToggleMixin from '../mixins/toggle';
 export default React.createClass({
   mixins: [ToggleMixin],
   render: function() {
-    var items = this.props.node.body.map((body) => {
-      return <li key={JSON.stringify(body)}><ASTNode node={body} /></li>;
+    var declarations = this.props.node.declarations.map((dec) => {
+      return <li key={dec}><ASTNode node={dec} /></li>;
     });
-
     return (
-      <div className='block-statement ast-node'>
-        <h4 onClick={this.onToggleClick}>BlockStatement</h4>
+      <div className='variable-declaration ast-node'>
+        <h4 onClick={this.onToggleClick}>VariableDeclaration</h4>
         <ul className={this.state.visible ? 'visible' : 'hidden' }>
-          { items }
+          <li><strong>Declarations</strong>: <ul>{ declarations }</ul></li>
         </ul>
       </div>
     );

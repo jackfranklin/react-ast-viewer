@@ -12,6 +12,7 @@ System.config({
     "esprima": "npm:esprima@2.0.0",
     "event-emitter": "npm:event-emitter@0.3.3",
     "react": "npm:react@0.12.2",
+    "text": "github:systemjs/plugin-text@0.0.2",
     "github:jspm/nodelibs-buffer@0.1.0": {
       "buffer": "npm:buffer@3.0.3"
     },
