@@ -2,20 +2,13 @@ import React from 'react';
 import ASTNode from '../ast-node';
 import ToggleMixin from '../mixins/toggle';
 import PathMixin from '../mixins/path';
+import MouseFocusMixin from '../mixins/mouse-focus';
 import Path from '../path';
 
 export default React.createClass({
-  mixins: [ToggleMixin, PathMixin],
+  mixins: [ToggleMixin, PathMixin, MouseFocusMixin],
   getInitialState: function() {
     return { isFocused: false }
-  },
-  onMouseEnter: function(e) {
-    e.stopPropagation();
-    this.setState({ isFocused: true });
-  },
-  onMouseLeave: function(e) {
-    e.stopPropagation();
-    this.setState({ isFocused: false });
   },
   render: function() {
     var declarations = this.props.node.declarations.map((dec, index) => {
