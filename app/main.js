@@ -14,11 +14,12 @@ var MainComponent = React.createClass({
     }.bind(this));
   },
   getInitialState: function() {
-    return { code:  code };
+    return { code:  code, allVisible: false };
   },
   onToggleAllClick: function(e) {
     e.preventDefault();
-    emitter.emit('toggle-all');
+    this.setState({ allVisible: !this.state.allVisible });
+    emitter.emit('toggle-all', { visible: this.state.allVisible });
   },
   render: function() {
     return (

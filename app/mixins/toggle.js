@@ -3,8 +3,12 @@ import emitter from '../event';
 
 export default {
   componentWillMount: function() {
-    emitter.on('toggle-all', function() {
-      this.setState({ visible: !this.state.visible });
+    emitter.on('toggle-all', function(data) {
+      if(data && data.visible) {
+        this.setState({ visible: data.visible });
+      } else {
+        this.setState({ visible: !this.state.visible });
+      }
     }.bind(this));
   },
   getInitialState: function() {

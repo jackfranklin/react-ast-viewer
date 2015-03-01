@@ -50,7 +50,7 @@
 
 .ast-node {
   border: 1px solid black;
-  padding: 10px;
+  padding: 5px;
   margin-top: 5px;
 }
 .ast li {
@@ -61,6 +61,7 @@
 .ast-node h4 {
   text-decoration: underline;
   color: blue;
+  margin: 2px 0;
 }
 
 .ast-node h4:hover {
