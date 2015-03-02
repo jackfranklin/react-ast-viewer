@@ -1,12 +1,7 @@
 import React from 'react';
 import ASTNode from '../ast-node';
-import ToggleMixin from '../mixins/toggle';
-import PathMixin from '../mixins/path';
-import MouseFocusMixin from '../mixins/mouse-focus';
-import Path from '../path';
 
 export default React.createClass({
-  mixins: [ToggleMixin, PathMixin, MouseFocusMixin],
   getInitialState: function() {
     return { isFocused: false }
   },
