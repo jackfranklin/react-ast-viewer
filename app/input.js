@@ -16,7 +16,7 @@ export default React.createClass({
         <form className="input-form" onSubmit={this.handleSubmit}>
           <textarea defaultValue={this.props.code} ref="input">
           </textarea>
-          <input type="submit" value="Render" />
+          <input type="submit" className='btn' value="Render" />
         </form>
       </div>
     );

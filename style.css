@@ -12,12 +12,12 @@
 
 
 .code {
-  width: 45%;
+  width: 35%;
   float: left;
 }
 
 .ast {
-  width: 45%;
+  width: 63%;
   float: right;
 }
 
@@ -34,18 +34,6 @@
   font-size: 14px;
   padding: 5px;
 }
-
-.input-form input {
-  display: block;
-  background: #ddd;
-  width: 25%;
-  margin: 10px auto;
-  padding: 10px;
-  border: 1px solid black;
-  font-size: 15px;
-  text-align: center;
-}
-
 
 .ast ul {
   margin: 5px;
@@ -84,3 +72,31 @@ div.path code {
 
 div.path code.hidden, .hidden { display: none; }
 
+.btn {
+  display: inline-block;
+  background: #539DC2;
+  color: white;
+  width: 200px;
+  text-decoration: none;
+  border-radius: 2px;
+  border: 1px solid black;
+  text-align: center;
+  padding: 10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  font-size: 13px;
+}
+
+.btn:hover {
+  text-decoration: underline;
+}
+
+
+.header h1 {
+  display: inline-block;
+  margin-right: 100px;
+}
+
+.input-form input {
+  margin: 10px auto;
+}

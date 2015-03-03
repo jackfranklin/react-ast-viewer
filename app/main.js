@@ -42,26 +42,22 @@ var MainComponent = React.createClass({
     );
   },
   renderTreeOutput: function() {
-    var showOnlyTreeText = this.state.showOnlyTree ? 'Code and Tree' : 'Just Tree';
-    var toggleText = this.state.allVisible ? 'Close' : 'Expand';
-
     return (
       <div className={this.state.showOnlyTree ? 'full-screen ast' : 'ast'}>
-        <a href="#" onClick={this.onShowTreeToggle}>{ showOnlyTreeText }</a>
-        <a href="#" onClick={this.onToggleAllClick}>{ toggleText }</a>
         <ASTOutput code={this.state.code} />
       </div>
     );
   },
   render: function() {
+    var showOnlyTreeText = this.state.showOnlyTree ? 'Code and Tree' : 'Just Tree';
+    var toggleText = this.state.allVisible ? 'Close Tree' : 'Expand Tree';
+
     return (
       <div className='app'>
-        <div className='intro'>
-          <h1>AST Viewer</h1>
-          <ul>
-            <li>Enter some JavaScript in the box below, and click "render"</li>
-            <li>The right hand side will show an abstract syntax tree of the code</li>
-          </ul>
+        <div className='header'>
+          <h1>JS AST Viewer</h1>
+          <a href="#" className='btn' onClick={this.onShowTreeToggle}>{ showOnlyTreeText }</a>
+          <a href="#" className='btn' onClick={this.onToggleAllClick}>{ toggleText }</a>
         </div>
 
         { this.renderCodeInput() }
