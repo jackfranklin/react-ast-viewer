@@ -29,7 +29,7 @@ export default React.createClass({
     this.setState({ allVisible: newVisible });
   },
   render: function() {
-    var toggleText = this.state.allVisible ? 'Close' : 'Expand'
+    var toggleText = this.state.allVisible ? 'Close' : 'Expand';
 
     return (
       <div className='ast'>
