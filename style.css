@@ -21,7 +21,7 @@
   float: right;
 }
 
-.tree-page .ast {
+.route-handler>.ast {
   width: 100%;
   float: none;
 }

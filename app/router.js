@@ -15,7 +15,7 @@ var routes = (
 );
 
 export default function() {
-  Router.run(routes, function (Handler) {
-    React.render(<Handler />, document.querySelector('.wrap'));
+  Router.run(routes, function (Handler, state) {
+    React.render(<Handler/>, document.querySelector('.wrap'));
   });
 };
