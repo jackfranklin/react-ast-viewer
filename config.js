@@ -13,6 +13,7 @@ System.config({
     "event-emitter": "npm:event-emitter@0.3.3",
     "lodash": "npm:lodash@3.3.1",
     "react": "npm:react@0.12.2",
+    "react-router": "npm:react-router@0.12.4",
     "text": "github:systemjs/plugin-text@0.0.2",
     "github:jspm/nodelibs-buffer@0.1.0": {
       "buffer": "npm:buffer@3.0.3"
@@ -99,6 +100,11 @@ System.config({
     },
     "npm:path-browserify@0.0.0": {
       "process": "github:jspm/nodelibs-process@0.1.1"
+    },
+    "npm:react-router@0.12.4": {
+      "process": "github:jspm/nodelibs-process@0.1.1",
+      "qs": "npm:qs@2.3.3",
+      "react": "npm:react@0.12.2"
     },
     "npm:react@0.12.2": {
       "buffer": "github:jspm/nodelibs-buffer@0.1.0",

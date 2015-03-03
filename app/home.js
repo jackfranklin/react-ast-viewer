@@ -5,7 +5,7 @@ import emitter from './event';
 
 import code from './starting-code.js!text';
 
-var MainComponent = React.createClass({
+export default React.createClass({
   componentWillMount: function() {
     emitter.on('input-change', function(args) {
       this.setState({
@@ -47,6 +47,3 @@ var MainComponent = React.createClass({
     );
   }
 });
-
-
-React.render(<MainComponent />, document.querySelector('.wrap'));
