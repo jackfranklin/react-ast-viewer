@@ -62,7 +62,7 @@
 }
 
 div.path code {
-  position: absolute;
+  position: fixed;
   z-index: 999;
   background: white;
   bottom: 20px;
