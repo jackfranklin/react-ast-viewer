@@ -6,15 +6,19 @@ import emitter from './event';
 import code from './starting-code.js!text';
 
 var MainComponent = React.createClass({
+  onInputChange: function(args) {
+    this.setState({
+      code: args.code
+    });
+  },
   componentWillMount: function() {
-    emitter.on('input-change', function(args) {
-      this.setState({
-        code: args.code
-      });
-    }.bind(this));
+    emitter.on('input-change', this.onInputChange);
+  },
+  componentWillUnmount: function() {
+    emitter.off('input-change', this.onInputChange);
   },
   getInitialState: function() {
-    return { code:  code, allVisible: false };
+    return { code:  code, allVisible: false, showOnlyTree: false };
   },
   onToggleAllClick: function(e) {
     e.preventDefault();
@@ -22,9 +26,34 @@ var MainComponent = React.createClass({
     emitter.emit('toggle-all', { visible: newVisible });
     this.setState({ allVisible: newVisible });
   },
-  render: function() {
-    var toggleText = this.state.allVisible ? 'Close' : 'Expand'
+  onShowTreeToggle: function(e) {
+    e.preventDefault();
+    this.setState({
+      showOnlyTree: !this.state.showOnlyTree
+    });
+  },
+  renderCodeInput: function() {
+    if(this.state.showOnlyTree) return;
 
+    return (
+      <div className='code'>
+        <CodeInput code={this.state.code} />
+      </div>
+    );
+  },
+  renderTreeOutput: function() {
+    var showOnlyTreeText = this.state.showOnlyTree ? 'Code and Tree' : 'Just Tree';
+    var toggleText = this.state.allVisible ? 'Close' : 'Expand';
+
+    return (
+      <div className={this.state.showOnlyTree ? 'full-screen ast' : 'ast'}>
+        <a href="#" onClick={this.onShowTreeToggle}>{ showOnlyTreeText }</a>
+        <a href="#" onClick={this.onToggleAllClick}>{ toggleText }</a>
+        <ASTOutput code={this.state.code} />
+      </div>
+    );
+  },
+  render: function() {
     return (
       <div className='app'>
         <div className='intro'>
@@ -35,14 +64,8 @@ var MainComponent = React.createClass({
           </ul>
         </div>
 
-        <div className='code'>
-          <CodeInput code={this.state.code} />
-        </div>
-
-        <div className='ast'>
-          <a href="#" onClick={this.onToggleAllClick}>{ toggleText }</a>
-          <ASTOutput code={this.state.code} />
-        </div>
+        { this.renderCodeInput() }
+        { this.renderTreeOutput() }
       </div>
     );
   }
