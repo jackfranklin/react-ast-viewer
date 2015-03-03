@@ -1,5 +1,8 @@
 export default {
   parentPath: function() {
+    if(!this.props.parentPath) {
+      console.warn('Warning: no parentPath set for', this.props.node);
+    }
     return this.props.parentPath || '';
   },
   path: function() {

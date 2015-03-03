@@ -1,7 +1,9 @@
 import React from 'react';
 import ASTNode from '../ast-node';
+import PathMixin from '../mixins/path';
 
 export default React.createClass({
+  mixins: [PathMixin],
   getInitialState: function() {
     return { isFocused: false }
   },
