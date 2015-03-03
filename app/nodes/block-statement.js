@@ -1,15 +1,22 @@
 import React from 'react';
 import ASTNode from '../ast-node';
+import PathMixin from '../mixins/path';
 
 export default React.createClass({
+  mixins: [PathMixin],
   render: function() {
-    //TODO: this should put the items under a key?
-    var items = this.props.node.body.map((body) => {
-      return <li key={JSON.stringify(body)}><ASTNode node={body} /></li>;
+    var items = this.props.node.body.map((body, index) => {
+      return (
+        <li key={index}>
+          <ASTNode parentPath={this.arrayPath('body', index)} node={body} />
+        </li>
+      );
     });
 
     return (
-      <ul> { items } </ul>
+      <ul>
+        <li><strong>Body</strong>: <ul> { items } </ul></li>
+      </ul>
     );
   }
 });

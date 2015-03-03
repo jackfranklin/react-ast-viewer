@@ -1,3 +1,2 @@
-var myObj = {
-  prop: 2
-};
+console.log(myObj.init());
+
