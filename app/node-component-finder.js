@@ -13,6 +13,7 @@ import FunctionExpression from './nodes/function-expression';
 import AssignmentExpression from './nodes/assignment-expression';
 import ThisExpression from './nodes/this-expression';
 import ReturnStatement from './nodes/return-statement';
+import BinaryExpression from './nodes/binary-expression';
 
 const NODE_COMPONENTS = {
   FunctionDeclaration,
@@ -29,11 +30,8 @@ const NODE_COMPONENTS = {
   FunctionExpression,
   AssignmentExpression,
   ThisExpression,
-  ReturnStatement
+  ReturnStatement,
+  BinaryExpression
 };
 
-export default function(type) {
-  if(NODE_COMPONENTS[type]) return NODE_COMPONENTS[type];
-
-  throw new Error('Component type missing ' + type);
-}
+export default (type) => NODE_COMPONENTS[type];

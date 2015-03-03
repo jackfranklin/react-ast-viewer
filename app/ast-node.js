@@ -13,6 +13,8 @@ export default React.createClass({
 
     if(newElementComponent) {
       var outputProperties = React.createElement(newElementComponent, this.props);
+    } else {
+      console.err('No element found for node', this.props.node);
     }
 
     return outputProperties ? (
