@@ -21,6 +21,11 @@
   float: right;
 }
 
+.tree-page .ast {
+  width: 100%;
+  float: none;
+}
+
 .input-form textarea {
   display: block;
   height: 300px;

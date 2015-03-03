@@ -1,12 +1,16 @@
 import React from 'react';
 import Router from 'react-router';
-import Home from './home';
+import Index from './index';
+import About from './about';
+import App from './app';
+import Tree from './tree';
 
 var {Route, DefaultRoute} = Router;
 
 var routes = (
-  <Route handler={Home} path="/">
-    <DefaultRoute handler={Home} />
+  <Route handler={App} path="/" name="app">
+    <Route name="tree" handler={Tree} />
+    <DefaultRoute handler={Index} />
   </Route>
 );
 
