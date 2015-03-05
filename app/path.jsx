@@ -2,9 +2,11 @@ import React from 'react';
 
 export default React.createClass({
   render: function() {
+    if(!this.props.visible) return null;
+
     return (
       <div className='path'>
-        <code className={this.props.visible ? 'visible' : 'hidden'}>{this.props.path}</code>
+        <code>{this.props.path}</code>
       </div>
     );
   }
