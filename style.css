@@ -102,3 +102,10 @@ div.path code.hidden, .hidden { display: none; }
 .input-form input {
   margin: 10px auto;
 }
+
+#ace-editor {
+  border: 1px solid black;
+  position: relative;
+  width: 100%;
+  height: 300px;
+}

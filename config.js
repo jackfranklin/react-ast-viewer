@@ -9,6 +9,7 @@ System.config({
 
 System.config({
   "map": {
+    "ace": "github:ajaxorg/ace-builds@1.1.8",
     "esprima": "npm:esprima@2.0.0",
     "event-emitter": "npm:event-emitter@0.3.3",
     "jsx": "github:floatdrop/plugin-jsx@0.1.1",
