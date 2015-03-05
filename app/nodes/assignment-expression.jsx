@@ -1,15 +1,15 @@
 import React from 'react';
 import ASTNode from '../ast-node.jsx!';
-import ToggleMixin from '../mixins/toggle';
+import PathMixin from '../mixins/path';
 
 export default React.createClass({
-  mixins: [ToggleMixin],
+  mixins: [PathMixin],
   render: function() {
     return (
       <ul>
         <li><strong>operator</strong>: { this.props.node.operator }</li>
-        <li><strong>left</strong>: <ASTNode node={this.props.node.left} /></li>
-        <li><strong>right</strong>: <ASTNode node={this.props.node.right} /></li>
+        <li><strong>left</strong>: <ASTNode node={this.props.node.left} parentPath={`${this.path()}.left`} /></li>
+        <li><strong>right</strong>: <ASTNode node={this.props.node.right} parentPath={`${this.path()}.right`} /></li>
       </ul>
     );
   }

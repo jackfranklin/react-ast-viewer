@@ -9,7 +9,6 @@ import MouseFocusMixin from './mixins/mouse-focus';
 export default React.createClass({
   mixins: [ToggleMixin, PathMixin, MouseFocusMixin],
   render: function() {
-    console.log('rendering', this.props.node);
     var newElementComponent = componentFinder(this.props.node.type);
 
     if(newElementComponent) {
