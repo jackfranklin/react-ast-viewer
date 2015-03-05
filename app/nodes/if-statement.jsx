@@ -1,41 +1,16 @@
 import React from 'react';
 import ASTNode from '../ast-node.jsx!';
 import PathMixin from '../mixins/path';
+import RenderNodeMixin from '../mixins/render-node-property.jsx!';
 
 export default React.createClass({
-  mixins: [PathMixin],
-  renderTest: function() {
-    return (
-      <li>
-        <strong>test</strong>:
-        <ASTNode node={this.props.node.test} parentPath={this.path() + '.test'} />
-      </li>
-    );
-  },
-  renderConsequent: function() {
-    return (
-      <li>
-        <strong>consequent</strong>:
-        <ASTNode node={this.props.node.consequent} parentPath={this.path() + '.consequent'} />
-      </li>
-    );
-  },
-  renderAlternate: function() {
-    if(!this.props.node.alternate) return null;
-
-    return (
-      <li>
-        <strong>alternate</strong>:
-        <ASTNode node={this.props.node.alternate} parentPath={this.path() + '.alternate'} />
-      </li>
-    );
-  },
+  mixins: [PathMixin, RenderNodeMixin],
   render: function() {
     return (
       <ul>
-        { this.renderTest() }
-        { this.renderConsequent() }
-        { this.renderAlternate() }
+        { this.renderNode('test') }
+        { this.renderNode('consequent') }
+        { this.renderNode('alternate', true) }
       </ul>
     );
   }

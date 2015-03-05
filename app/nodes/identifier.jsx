@@ -1,9 +1,11 @@
 import React from 'react';
+import RenderNodeMixin from '../mixins/render-node-property.jsx!';
 
 export default React.createClass({
+  mixins: [RenderNodeMixin],
   render: function() {
     return (
-      <ul><li><strong>Name</strong>: {this.props.node.name}</li></ul>
+      <ul> { this.renderProp('name') }</ul>
     );
   }
 });

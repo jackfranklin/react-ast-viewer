@@ -1,9 +1,10 @@
 import React from 'react';
 import ASTNode from '../ast-node.jsx!';
 import PathMixin from '../mixins/path';
+import RenderNodeMixin from '../mixins/render-node-property.jsx!';
 
 export default React.createClass({
-  mixins: [PathMixin],
+  mixins: [PathMixin, RenderNodeMixin],
   render: function() {
     var callArgs = this.props.node.arguments.map((arg, index) => {
       return (
@@ -13,7 +14,7 @@ export default React.createClass({
 
     return (
       <ul>
-        <li><strong>Callee</strong>: <ASTNode node={this.props.node.callee} parentPath={`${this.path()}.callee`}/></li>
+        { this.renderNode('callee') }
         <li><strong>Arguments</strong>: <ul> { callArgs } </ul></li>
       </ul>
     );

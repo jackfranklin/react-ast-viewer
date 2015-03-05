@@ -1,9 +1,10 @@
 import React from 'react';
 import ASTNode from '../ast-node.jsx!';
 import PathMixin from '../mixins/path';
+import RenderNodeMixin from '../mixins/render-node-property.jsx!';
 
 export default React.createClass({
-  mixins: [PathMixin],
+  mixins: [PathMixin, RenderNodeMixin],
   renderArgument: function() {
     return (
       <li>
@@ -15,9 +16,9 @@ export default React.createClass({
   render: function() {
     return (
       <ul>
-        <li><strong>operator</strong>: { this.props.node.operator }</li>
-        <li><strong>prefix</strong>: { this.props.node.prefix }</li>
-        { this.renderArgument() }
+        { this.renderProp('operator') }
+        { this.renderProp('prefix') }
+        { this.renderNode('argument') }
       </ul>
     );
   }

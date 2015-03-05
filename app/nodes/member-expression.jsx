@@ -1,14 +1,15 @@
 import React from 'react';
 import ASTNode from '../ast-node.jsx!';
 import PathMixin from '../mixins/path';
+import RenderNodeMixin from '../mixins/render-node-property.jsx!';
 
 export default React.createClass({
-  mixins: [PathMixin],
+  mixins: [PathMixin, RenderNodeMixin],
   render: function() {
     return (
       <ul>
-        <li><strong>Object</strong>: <ASTNode node={this.props.node.object} parentPath={`${this.path()}.object`} /></li>
-        <li><strong>Property</strong>: <ASTNode node={this.props.node.property} parentPath={`${this.path()}.property`} /></li>
+        { this.renderNode('object') }
+        { this.renderNode('property') }
       </ul>
     );
   }

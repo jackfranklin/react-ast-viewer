@@ -10,7 +10,7 @@ export default React.createClass({
   render: function() {
     var declarations = this.props.node.declarations.map((dec, index) => {
       return (
-        <li key={dec}>
+        <li key={index}>
           <ASTNode parentPath={this.arrayPath('declarations', index)} node={dec} />
         </li>
       );

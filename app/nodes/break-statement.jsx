@@ -1,11 +1,9 @@
 import React from 'react';
+import RenderNodeMixin from '../mixins/render-node-property.jsx!';
 
 export default React.createClass({
+  mixins: [RenderNodeMixin],
   render: function() {
-    if(!this.props.node.label) return null;
-
-    return (
-      <li><strong>label</strong>: { this.props.node.label }</li>
-    );
+    return this.renderProp('label', true);
   }
 });
