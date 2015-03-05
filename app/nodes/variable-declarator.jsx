@@ -7,11 +7,20 @@ export default React.createClass({
   getInitialState: function() {
     return { isFocused: false }
   },
+  renderInit: function() {
+    if(!this.props.node.init) return;
+    return (
+      <li>
+        <strong>init</strong>:
+        <ASTNode parentPath={this.path() + '.init'} node={this.props.node.init} />
+      </li>
+    );
+  },
   render: function() {
     return (
       <ul>
         <li><strong>id</strong>: <ASTNode parentPath={this.path() + '.id'} node={this.props.node.id} /></li>
-        <li><strong>init</strong>: <ASTNode parentPath={this.path() + '.init'} node={this.props.node.init} /></li>
+        { this.renderInit() }
       </ul>
     );
   }

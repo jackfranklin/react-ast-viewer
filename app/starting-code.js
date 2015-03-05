@@ -1,9 +1,22 @@
-var myObj = {
-  foo: 2,
-  init: function(x, y) {
-    return x + y;
-  }
+/**
+ * Iterates over `shoestring` collections.
+ *
+ * @param {function} callback The callback to be invoked on each element and index
+ * @return shoestring
+ * @this shoestring
+ */
+shoestring.fn.each = function( callback ){
+  return shoestring.each( this, callback );
 };
 
-console.log(myObj.init());
+shoestring.each = function( collection, callback ) {
+  var val;
+  for( var i = 0, il = collection.length; i < il; i++ ){
+    val = callback.call( collection[i], i, collection[i] );
+    if( val === false ){
+      break;
+    }
+  }
 
+  return collection;
+};
