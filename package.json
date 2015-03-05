@@ -16,13 +16,13 @@
     "dependencies": {
       "esprima": "npm:esprima@^2.0.0",
       "event-emitter": "npm:event-emitter@^0.3.3",
+      "jsx": "github:floatdrop/plugin-jsx@^0.1.1",
       "lodash": "npm:lodash@^3.3.1",
       "react": "npm:react@^0.12.2",
       "text": "github:systemjs/plugin-text@^0.0.2"
     }
   },
   "devDependencies": {
-    "react-tools": "^0.12.2",
     "serve": "^1.4.0"
   }
 }

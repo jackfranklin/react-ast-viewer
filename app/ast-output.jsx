@@ -1,6 +1,6 @@
 import React from 'react';
 import esprima from 'esprima';
-import ASTNode from './ast-node';
+import ASTNode from './ast-node.jsx!';
 
 export default React.createClass({
   componentWillMount: function() {

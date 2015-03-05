@@ -1,6 +1,5 @@
 import React from 'react';
-import ASTNode from '../ast-node';
-import ArrayItem from './sub-nodes/array-item';
+import ASTNode from '../ast-node.jsx!';
 import PathMixin from '../mixins/path';
 
 export default React.createClass({

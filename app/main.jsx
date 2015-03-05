@@ -1,6 +1,6 @@
 import React from 'react';
-import CodeInput from './input';
-import ASTOutput from './ast-output';
+import CodeInput from './input.jsx!';
+import ASTOutput from './ast-output.jsx!';
 import emitter from './event';
 
 import code from './starting-code.js!text';

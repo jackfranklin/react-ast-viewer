@@ -1,5 +1,5 @@
 import React from 'react';
-import ASTNode from '../ast-node';
+import ASTNode from '../ast-node.jsx!';
 import ToggleMixin from '../mixins/toggle';
 
 export default React.createClass({
