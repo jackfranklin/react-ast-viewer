@@ -17,6 +17,8 @@ Now visit `http://localhost:9876`.
 
 ## TODO
 
+- design idea: http://goast.yuroyoro.net/
+- make esprima output LOC, and then we can highlight things in the code bit 
 - Pull out the rendering of arrays of items into mixin
 - headings that do not expand should not be clickable (BreakStatement)
 - add ability to "zoom in" on a section of the code (will require the ability to find some of the AST given the path of the component)
