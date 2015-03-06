@@ -15,7 +15,9 @@ export default React.createClass({
     });
 
     return (
-      <ul><li><strong>properties</strong>: <ul>{ properties }</ul></li></ul>
+      <ul>
+        { this.renderArrayProps('properties') }
+      </ul>
     );
   }
 });

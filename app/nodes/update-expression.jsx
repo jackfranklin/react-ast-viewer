@@ -5,14 +5,6 @@ import RenderNodeMixin from '../mixins/render-node-property.jsx!';
 
 export default React.createClass({
   mixins: [PathMixin, RenderNodeMixin],
-  renderArgument: function() {
-    return (
-      <li>
-        <strong>argument</strong>:
-        <ASTNode node={this.props.node.argument} parentPath={this.path() + '.argument'} />
-      </li>
-    );
-  },
   render: function() {
     return (
       <ul>

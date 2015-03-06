@@ -28,5 +28,22 @@ export default {
         { this.props.node[propertyName] }
       </li>
     );
+  },
+  renderArrayProps: function(propertyName, optional=false) {
+    var items = this.props.node[propertyName].map((item, index) => {
+      return (
+        <li key={index}>
+          <ASTNode node={item} parentPath={this.arrayPath(propertyName, index)} />
+        </li>
+      );
+    });
+
+    if(optional && !items.length) {
+      return null;
+    }
+
+    return (
+      <li><strong>{ propertyName }</strong>: <ul> { items } </ul></li>
+    );
   }
 }

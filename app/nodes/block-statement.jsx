@@ -1,21 +1,14 @@
 import React from 'react';
 import ASTNode from '../ast-node.jsx!';
 import PathMixin from '../mixins/path';
+import RenderNodeMixin from '../mixins/render-node-property.jsx!';
 
 export default React.createClass({
-  mixins: [PathMixin],
+  mixins: [PathMixin, RenderNodeMixin],
   render: function() {
-    var items = this.props.node.body.map((body, index) => {
-      return (
-        <li key={index}>
-          <ASTNode parentPath={this.arrayPath('body', index)} node={body} />
-        </li>
-      );
-    });
-
     return (
       <ul>
-        <li><strong>Body</strong>: <ul> { items } </ul></li>
+        { this.renderArrayProps('body') }
       </ul>
     );
   }

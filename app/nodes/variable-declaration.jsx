@@ -1,23 +1,17 @@
 import React from 'react';
 import ASTNode from '../ast-node.jsx!';
 import PathMixin from '../mixins/path';
+import RenderNodeMixin from '../mixins/render-node-property.jsx!';
 
 export default React.createClass({
-  mixins: [PathMixin],
+  mixins: [PathMixin, RenderNodeMixin],
   getInitialState: function() {
     return { isFocused: false }
   },
   render: function() {
-    var declarations = this.props.node.declarations.map((dec, index) => {
-      return (
-        <li key={index}>
-          <ASTNode parentPath={this.arrayPath('declarations', index)} node={dec} />
-        </li>
-      );
-    });
     return (
       <ul>
-        <li><strong>Declarations</strong>: <ul>{ declarations }</ul></li>
+        { this.renderArrayProps('declarations') }
       </ul>
     );
   }
