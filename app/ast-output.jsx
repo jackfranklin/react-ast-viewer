@@ -20,7 +20,7 @@ export default React.createClass({
   },
   render: function() {
     var nodes = this.state.tree.body.map((body, index) => {
-      return <li key={index}><ASTNode parentPath={`/${index}`} node={body} /></li>;
+      return <li key={JSON.stringify(body)}><ASTNode parentPath={`/${index}`} node={body} /></li>;
     });
 
     return <ul>{nodes}</ul>;

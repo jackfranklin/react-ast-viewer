@@ -32,7 +32,7 @@ export default {
   renderArrayProps: function(propertyName, optional=false) {
     var items = this.props.node[propertyName].map((item, index) => {
       return (
-        <li key={index}>
+        <li key={JSON.stringify(item)}>
           <ASTNode node={item} parentPath={this.arrayPath(propertyName, index)} />
         </li>
       );
