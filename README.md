@@ -18,6 +18,8 @@ Now visit `http://localhost:9876`.
 ## TODO
 
 - design idea: http://goast.yuroyoro.net/
+- deal with invalid input code  
+- get an editor in instead of a plain text area 
 - make esprima output LOC, and then we can highlight things in the code bit 
 - Pull out the rendering of arrays of items into mixin
 - headings that do not expand should not be clickable (BreakStatement)
