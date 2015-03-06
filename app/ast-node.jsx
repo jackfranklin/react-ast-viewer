@@ -4,12 +4,22 @@ import componentFinder from './node-component-finder';
 import ToggleMixin from './mixins/toggle';
 import Path from './path.jsx!';
 import PathMixin from './mixins/path';
-import MouseFocusMixin from './mixins/mouse-focus';
+import emitter from './event';
 
 import NULL_NODE_TYPES from './null-nodes';
 
 export default React.createClass({
-  mixins: [ToggleMixin, PathMixin, MouseFocusMixin],
+  mixins: [ToggleMixin, PathMixin],
+  onMouseEnter: function(e) {
+    e.stopPropagation();
+    emitter.emit('active-node', this.props.node);
+    this.setState({ isFocused: true });
+  },
+  onMouseLeave: function(e) {
+    e.stopPropagation();
+    emitter.emit('deactive-node', this.props.node);
+    this.setState({ isFocused: false });
+  },
   getRenderedContent: function() {
     if(this._content) return this._content;
 
