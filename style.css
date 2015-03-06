@@ -51,12 +51,14 @@
 }
 
 .ast-node h4 {
-  text-decoration: underline;
-  color: blue;
   margin: 2px 0;
 }
+.ast-node h4.expand-heading {
+  text-decoration: underline;
+  color: blue;
+}
 
-.ast-node h4:hover {
+.ast-node h4.expand-heading:hover {
   text-decoration: none;
   cursor: pointer
 }
