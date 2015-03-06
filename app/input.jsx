@@ -4,13 +4,10 @@ import emitter from './event';
 import ace from 'ace';
 
 export default React.createClass({
-  componentDidMount: function() {
-    this.editor = ace.edit('ace-editor');
+  shouldComponentUpdate: function(nextProps) {
+    return false;
   },
-  componentWillReceiveProps: function() {
-    console.log(this.editor);
-    this.editor.destroy();
-    console.log(document.getElementById('ace-editor'));
+  componentDidMount: function() {
     this.editor = ace.edit('ace-editor');
   },
   handleSubmit: function(e) {
@@ -18,7 +15,7 @@ export default React.createClass({
     this.emitChange();
   },
   emitChange: function() {
-    var input = this.editor.getSession().getValue();
+    var input = this.editor.getValue();
     emitter.emit('input-change', { code: input });
   },
   render: function() {
