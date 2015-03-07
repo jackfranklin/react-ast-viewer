@@ -49,13 +49,17 @@ var MainComponent = React.createClass({
     );
   },
   render: function() {
-    var showOnlyTreeText = this.state.showOnlyTree ? 'Code and Tree' : 'Just Tree';
+    var showOnlyTreeText = this.state.showOnlyTree ? 'View Code and Tree' : 'View Just Tree';
     var toggleText = this.state.allVisible ? 'Close Tree' : 'Expand Tree';
 
     return (
       <div className='app'>
         <div className='header'>
-          <h1>JS AST Viewer</h1>
+          <h1>ReactJS AST Viewer</h1>
+          <p>By <a href='http://twitter.com/Jack_Franklin'>@Jack_Franklin</a></p>
+        </div>
+
+        <div className='app-btns'>
           <a href="#" className='btn' onClick={this.onShowTreeToggle}>{ showOnlyTreeText }</a>
           <a href="#" className='btn' onClick={this.onToggleAllClick}>{ toggleText }</a>
         </div>

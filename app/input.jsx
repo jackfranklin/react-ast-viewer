@@ -1,5 +1,6 @@
 import React from 'react';
 import emitter from './event';
+import AboutProject from './about.jsx!';
 
 import ace from 'ace';
 
@@ -41,9 +42,10 @@ export default React.createClass({
     return (
       <div>
         <form className="input-form" onSubmit={this.handleSubmit}>
-          <pre id='ace-editor'>{ this.props.code }</pre>
           <input type="submit" className='btn' value="Render" />
+          <pre id='ace-editor'>{ this.props.code }</pre>
         </form>
+        <AboutProject />
       </div>
     );
   }

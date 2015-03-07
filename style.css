@@ -12,6 +12,7 @@
 .code {
   width: 35%;
   float: left;
+  margin-top: -100px;
 }
 
 .ast {
@@ -45,31 +46,35 @@ div.path code {
 div.path code.hidden, .hidden { display: none; }
 
 .btn {
+  border: none;
   display: inline-block;
-  background: #539DC2;
+  background: #498EE0;
   color: white;
   width: 200px;
   text-decoration: none;
   border-radius: 2px;
-  border: 1px solid black;
   text-align: center;
   padding: 10px;
-  margin-right: 10px;
-  margin-bottom: 10px;
+  margin-left: 10px;
   font-size: 13px;
+  margin-bottom: 5px;
+}
+
+.app-btns {
+  float: right;
 }
 
 .btn:hover {
   text-decoration: underline;
 }
 
-.header h1 {
-  display: inline-block;
-  margin-right: 100px;
+.header {
+  text-align: center;
 }
 
 .input-form input {
-  margin: 10px auto;
+  margin: 10px 0 0 0;
+  box-sizing: content-box;
 }
 
 #ace-editor {

@@ -17,17 +17,11 @@ Now visit `http://localhost:9876`.
 
 ## TODO
 
-- design idea: http://goast.yuroyoro.net/
+- swap to [espree](https://github.com/eslint/espree) for ES6 support?
 - deal with invalid input code  
-- get an editor in instead of a plain text area 
-- make esprima output LOC, and then we can highlight things in the code bit 
-- Pull out the rendering of arrays of items into mixin
-- headings that do not expand should not be clickable (BreakStatement)
 - add ability to "zoom in" on a section of the code (will require the ability to find some of the AST given the path of the component)
 - test with more complex code examples
 - have a few pre-generated code examples to load in
-- spruce up the CSS!
-- add the ACE editor or similar
 - ability to fetch and load in a URL from GitHub or similar
 - add build task to minify all the things for production
 - add text to the homepage about checking console if nothing renders
