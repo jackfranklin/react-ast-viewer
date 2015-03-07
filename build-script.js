@@ -3,17 +3,9 @@ var _ = require('lodash');
 var fs = require('fs');
 var $ = cheerio.load(fs.readFileSync('index.html'));
 
-$('script').each(function(i, elem) {
+$('script').remove();
 
-  if($(elem).attr('src') === undefined || $(elem).attr('src').indexOf('config.js') > -1) {
-  } else {
-    $(elem).remove();
-  }
-});
+$('body').append("<script src='./traceur-runtime.js'></script><script src='./dist.min.js'></script>");
 
-$('script').last().before("<script src='./dist.min.js'></script>");
-
-fs.writeFileSync('dist/config.js', fs.readFileSync('config.js'));
 fs.writeFileSync('dist/style.css', fs.readFileSync('style.css'));
-
 fs.writeFileSync('dist/index.html', '<html>' + $('html').html() + '</html>');
