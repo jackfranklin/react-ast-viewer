@@ -2,14 +2,14 @@ import React from 'react';
 import emitter from './event';
 import AboutProject from './about.jsx!';
 
-import ace from 'ace';
+import ace from 'brace';
+import 'brace/mode/javascript'
 
-//TODO: for some reason it doesn't work with import?
-var aceRange = require('ace/range');
+var {Range} = ace.acequire('ace/range');
 
 export default React.createClass({
   highlightRange: function(startRow, startCol, endRow, endCol) {
-    var range = new aceRange.Range(...arguments);
+    var range = new Range(...arguments);
     this.marker = this.editor.getSession().addMarker(range, 'code-highlight', 'text', true);
   },
   shouldComponentUpdate: function(nextProps) {
@@ -17,6 +17,7 @@ export default React.createClass({
   },
   componentDidMount: function() {
     this.editor = ace.edit('ace-editor');
+    this.editor.getSession().setMode('ace/mode/javascript');
     this.editor.setHighlightActiveLine(false);
 
     emitter.on('active-node', (node) => {

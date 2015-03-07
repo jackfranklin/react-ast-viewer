@@ -10,6 +10,7 @@ System.config({
 System.config({
   "map": {
     "ace": "github:ajaxorg/ace-builds@1.1.8",
+    "brace": "npm:brace@0.5.0",
     "esprima": "npm:esprima@2.0.0",
     "event-emitter": "npm:event-emitter@0.3.3",
     "jsx": "github:floatdrop/plugin-jsx@0.1.1",
@@ -86,6 +87,11 @@ System.config({
     "npm:ast-types@0.6.16": {
       "assert": "github:jspm/nodelibs-assert@0.1.0",
       "util": "github:jspm/nodelibs-util@0.1.0"
+    },
+    "npm:brace@0.5.0": {
+      "buffer": "github:jspm/nodelibs-buffer@0.1.0",
+      "process": "github:jspm/nodelibs-process@0.1.1",
+      "w3c-blob": "npm:w3c-blob@0.0.1"
     },
     "npm:browserify-aes@1.0.0": {
       "buffer": "github:jspm/nodelibs-buffer@0.1.0",
@@ -461,6 +467,10 @@ System.config({
     },
     "npm:vm-browserify@0.0.4": {
       "indexof": "npm:indexof@0.0.1"
+    },
+    "npm:w3c-blob@0.0.1": {
+      "buffer": "github:jspm/nodelibs-buffer@0.1.0",
+      "process": "github:jspm/nodelibs-process@0.1.1"
     }
   }
 });

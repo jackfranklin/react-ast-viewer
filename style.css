@@ -147,7 +147,7 @@ div.path code.hidden, .hidden { display: none; }
   margin-bottom: 3px;
 }
 
-.node-property {
+.node-property, .node-key {
   font-family: Courier;
 }
 
@@ -157,6 +157,4 @@ div.path code.hidden, .hidden { display: none; }
   font-weight: normal;
   font-family: Helvetica, Arial, sans-serif;
 }
-
-
 

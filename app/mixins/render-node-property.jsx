@@ -32,7 +32,7 @@ export default {
     var items = this.props.node[propertyName].map((item, index) => {
       return (
         <li key={JSON.stringify(item)}>
-          <ASTNode nodeKey={propertyName} node={item} parentPath={this.arrayPath(propertyName, index)} />
+          <ASTNode nodeKey={`${propertyName}[${index}]`} node={item} parentPath={this.arrayPath(propertyName, index)} />
         </li>
       );
     });
@@ -41,8 +41,6 @@ export default {
       return null;
     }
 
-    return (
-      <li><ul> { items } </ul></li>
-    );
+    return items;
   }
 }

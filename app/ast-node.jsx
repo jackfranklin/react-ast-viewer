@@ -39,7 +39,7 @@ export default React.createClass({
   renderKey: function() {
     if(!this.props.nodeKey) return null;
 
-    return `${this.props.nodeKey}: `;
+    return <span className='node-key'>{`${this.props.nodeKey}: `}</span>;
   },
   renderHeading: function() {
     return (
