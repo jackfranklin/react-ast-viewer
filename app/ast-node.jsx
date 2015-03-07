@@ -51,9 +51,11 @@ export default React.createClass({
   renderContent: function() {
     if(this.isNullNode()) return null;
 
-    if(!this.state.visible) return null;
-
-    return this.getRenderedContent();
+    return (
+      <div className={ this.state.visible ? 'visible' : 'hidden' }>
+        { this.getRenderedContent() }
+      </div>
+    )
   },
   renderToggle: function() {
     var internalText = this.state.visible ?  '-' : '+';
