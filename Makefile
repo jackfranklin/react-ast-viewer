@@ -8,6 +8,6 @@ install:
 build:
 	mkdir -p dist/
 	node build-script.js
-	jspm bundle app/main.jsx! --minify dist/dist.min.js
+	jspm bundle-sfx app/main.jsx! --minify dist/dist.min.js
 
 
