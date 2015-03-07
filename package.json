@@ -25,6 +25,10 @@
     }
   },
   "devDependencies": {
+    "cheerio": "^0.18.0",
     "serve": "^1.4.0"
+  },
+  "dependencies": {
+    "lodash": "^3.4.0"
   }
 }
