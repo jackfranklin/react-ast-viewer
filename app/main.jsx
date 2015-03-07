@@ -18,7 +18,7 @@ var MainComponent = React.createClass({
     emitter.off('input-change', this.onInputChange);
   },
   getInitialState: function() {
-    return { code:  code, allVisible: false, showOnlyTree: false };
+    return { code:  code, allVisible: true, showOnlyTree: false };
   },
   onToggleAllClick: function(e) {
     e.preventDefault();

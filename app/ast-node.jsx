@@ -5,6 +5,7 @@ import ToggleMixin from './mixins/toggle';
 import Path from './path.jsx!';
 import PathMixin from './mixins/path';
 import emitter from './event';
+import NodeLocation from './node-location.jsx!';
 
 import NULL_NODE_TYPES from './null-nodes';
 
@@ -32,26 +33,35 @@ export default React.createClass({
       console.err('No element found for node', this.props.node);
     }
   },
-  isNoNullType: function() {
+  isNullNode: function() {
     return NULL_NODE_TYPES.indexOf(this.props.node.type) > -1;
+  },
+  renderKey: function() {
+    if(!this.props.nodeKey) return null;
+
+    return `${this.props.nodeKey}: `;
   },
   renderHeading: function() {
     return (
-      <h4 className={this.isNoNullType() ? '' : 'expand-heading'}
-        onClick={this.onToggleClick}>
-        { this.props.node.type }
+      <h4>{this.renderKey()}{ this.props.node.type }
+        <NodeLocation loc={this.props.node.loc} />
       </h4>
     );
   },
   renderContent: function() {
-    if(this.isNoNullType()) {
-      return null;
-    }
+    if(this.isNullNode()) return null;
 
+    if(!this.state.visible) return null;
+
+    return this.getRenderedContent();
+  },
+  renderToggle: function() {
+    var internalText = this.state.visible ?  '-' : '+';
+    if(this.isNullNode()) return null;
     return (
-      <div className={this.state.visible ? 'visible' : 'hidden' }>
-        { this.getRenderedContent() }
-      </div>
+      <a href="#" className='toggle-icon' onClick={this.onToggleClick}>
+        { internalText }
+      </a>
     );
   },
   render: function() {
@@ -59,9 +69,15 @@ export default React.createClass({
 
     return (
       <div className={`ast-node ${this.props.node.type}`} onMouseLeave={this.onMouseLeave} onMouseEnter={this.onMouseEnter}>
-        { this.renderHeading() }
         <Path path={this.path()} visible={this.state.isFocused} />
-        { this.renderContent() }
+        <div className='ast-node-head'>
+          { this.renderToggle() }
+
+          { this.renderHeading() }
+        </div>
+        <div className='ast-node-children'>
+          { this.renderContent() }
+        </div>
       </div>
     );
   }
